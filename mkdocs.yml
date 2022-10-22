@@ -1,0 +1,74 @@
+site_name: 文档
+
+# 主题
+theme:
+
+  # 主题名字 - material
+  name: material
+
+  # 主题特征
+  features:
+
+    # 搜索建议
+    - search.suggest
+
+    # 搜索高亮
+    - search.highlight
+
+    # 搜索共享
+    - search.share
+
+  # 主题配色
+  palette:
+
+    # 明亮主题 - default
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: 切换暗黑主题
+
+    # 暗黑主题 - slate
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: 切换明亮主题
+
+# 扩展设置
+extra:
+
+  # 网站页脚
+  social:
+
+    # github
+    - icon: fontawesome/brands/github
+      link: https://github.com/XiangQinxi/
+
+    # gitlab
+    - icon: fontawesome/brands/gitlab
+      link: https://gitlab.com/XiangQinxi
+
+    # bilibili
+    - icon: fontawesome/brands/bilibili
+      link: https://space.bilibili.com/471425191
+
+    # qq
+    - icon: fontawesome/brands/qq
+      link: tencent://message/?uin=1379773753
+
+
+# 扩展主题
+extra_css:
+  - stylesheets/extra.css
+
+# 额外插件
+plugins:
+
+  # 搜索插件
+  - search:
+
+      # 搜索语言 - zh en
+      lang:
+        - zh
+        - en
+
+copyright: Copyright &copy; 2022 XiangQinxi
