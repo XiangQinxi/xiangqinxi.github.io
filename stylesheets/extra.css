@@ -1,0 +1,12 @@
+/* 这里是网站的一些扩展样式调整 */
+
+/* 设置网站明亮主题的配色 */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:        #3C6FFF;
+}
+
+/* 设置网站暗黑主题的配色 */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        #3C7BFC;
+  --md-primary-bg-color:        #151515;
+}
