@@ -1,37 +1,83 @@
 site_name: XiangQinxi
 
 # 主题
+plugins:
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [..]
+          options:
+            allow_inspection: true
+  - meta
+  - search:
+      lang: zh
+  - offline
+
 theme:
-
-  # 主题名字 - material
-  name: material
-
-  # 主题特征
-  features:
-
-    # 搜索建议
-    - search.suggest
-
-    # 搜索高亮
-    - search.highlight
-
-    # 搜索共享
-    - search.share
-
-  # 主题配色
+  icon:
+    annotation: material/arrow-right-circle
+  logo: assets/logo.png
+  name: material  # 主题
   palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
 
-    # 明亮主题 - default
-    - scheme: default
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
       toggle:
         icon: material/brightness-7
-        name: 切换暗黑主题
+        name: Switch to dark mode
 
-    # 暗黑主题 - slate
-    - scheme: slate
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
       toggle:
         icon: material/brightness-4
-        name: 切换明亮主题
+        name: Switch to system preference
+
+  features:
+    - navigation.instant
+    - content.code.copy
+    - content.tabs.link
+    - navigation.footer  # Footer
+    - content.tooltips  # ToolTip
+    - blog  # Blog
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.indexes
+  language: zh
+
+markdown_extensions:
+  - pymdownx.tabbed:
+      alternate_style: true
+  - md_in_html
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - tables
+  - abbr
+  - attr_list
+  - pymdownx.snippets
+  - def_list
+  - admonition
+  - pymdownx.details
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+nav:
+  - Home 主页: index.md
+  - Project 项目集: projects.md
 
 # 扩展设置
 extra:
