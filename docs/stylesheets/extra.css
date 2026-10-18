@@ -1,12 +1,309 @@
-/* 这里是网站的一些扩展样式调整 */
+/* ==========================================================================
+   XiangQinxi · 站点自定义样式
+   仅覆盖 Material for MkDocs 的少量细节，保持与默认主题一致的观感。
+   ========================================================================== */
 
-/* 设置网站明亮主题的配色 */
-[data-md-color-scheme="default"] {
-  --md-primary-fg-color:        #3C6FFF;
+/* ---------------------------------- 变量 ---------------------------------- */
+
+:root {
+  --xq-radius: 0.8rem;
+  --xq-border: 1px solid var(--md-default-fg-color--lightest);
+  --xq-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+  --xq-shadow-hover: 0 12px 30px -14px rgb(0 0 0 / 35%);
+  --xq-max-content: 46rem;
 }
 
-/* 设置网站暗黑主题的配色 */
+[data-md-color-scheme="default"] {
+  --xq-hero-glow:
+    radial-gradient(circle at 12% 18%, rgb(63 81 181 / 16%), transparent 42%),
+    radial-gradient(circle at 88% 8%, rgb(0 172 193 / 14%), transparent 38%);
+  --xq-hero-bg: linear-gradient(135deg, rgb(248 250 252 / 92%), rgb(255 255 255 / 70%));
+  --xq-card-bg: rgb(248 250 252 / 85%);
+}
+
 [data-md-color-scheme="slate"] {
-  --md-primary-fg-color:        #3C7BFC;
-  --md-primary-bg-color:        #151515;
+  --xq-hero-glow:
+    radial-gradient(circle at 12% 18%, rgb(121 134 203 / 22%), transparent 42%),
+    radial-gradient(circle at 88% 8%, rgb(77 208 225 / 12%), transparent 38%);
+  --xq-hero-bg: linear-gradient(135deg, rgb(30 34 42 / 92%), rgb(38 43 54 / 70%));
+  --xq-card-bg: rgb(30 34 42 / 80%);
+}
+
+/* --------------------------------- 排版细节 -------------------------------- */
+
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.md-typeset h2 {
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  margin-top: 2.4rem;
+}
+
+.md-typeset a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+/* 正文里裸链接不多，避免满屏下划线 */
+.md-typeset a:not(.md-button):not(.headerlink):hover {
+  text-decoration: underline;
+}
+
+/* ----------------------------------- 首页 --------------------------------- */
+
+/* Hero */
+.md-typeset .hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.75rem;
+  padding: 2.25rem 2rem;
+  margin: 0 0 1.75rem;
+  border: var(--xq-border);
+  border-radius: 1.1rem;
+  background: var(--xq-hero-glow), var(--xq-hero-bg);
+  box-shadow: var(--xq-shadow);
+}
+
+.md-typeset .hero__logo img {
+  width: 6rem;
+  height: 6rem;
+  filter: drop-shadow(0 6px 14px rgb(0 0 0 / 18%));
+}
+
+.md-typeset .hero__body {
+  flex: 1 1 18rem;
+  min-width: 0;
+}
+
+.md-typeset .hero__eyebrow {
+  margin: 0 0 0.2rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--md-primary-fg-color);
+}
+
+.md-typeset .hero__title {
+  margin: 0 0 0.5rem;
+  font-size: 2.3rem;
+  line-height: 1.15;
+  font-weight: 750;
+}
+
+.md-typeset .hero__desc {
+  margin: 0 0 1.1rem;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--md-default-fg-color--light);
+}
+
+.md-typeset .hero__desc code {
+  font-size: 0.85em;
+}
+
+.md-typeset .hero__actions {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.md-typeset .hero__actions .md-button {
+  margin: 0;
+}
+
+/* 数字条 */
+.md-typeset .stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
+  gap: 0.75rem;
+  margin: 0 0 2rem;
+}
+
+.md-typeset .stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 1rem 0.75rem;
+  border: var(--xq-border);
+  border-radius: var(--xq-radius);
+  background: var(--md-code-bg-color);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.md-typeset .stat:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--xq-shadow-hover);
+}
+
+.md-typeset .stat__num {
+  font-size: 1.6rem;
+  font-weight: 750;
+  line-height: 1.2;
+  color: var(--md-primary-fg-color);
+}
+
+.md-typeset .stat__label {
+  font-size: 0.76rem;
+  color: var(--md-default-fg-color--light);
+}
+
+/* 卡片：悬停时轻微抬起 */
+.md-typeset .grid.cards > ul > li {
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--xq-shadow-hover);
+  border-color: var(--md-primary-fg-color--light);
+}
+
+.md-typeset .grid.cards > ul > li:hover .twemoji,
+.md-typeset .grid.cards > ul > li:hover .lg svg {
+  transform: scale(1.08);
+}
+
+.md-typeset .grid.cards .lg svg {
+  transition: transform 200ms ease;
+}
+
+/* 首页「精选项目」下面的按钮 */
+.md-typeset .md-button {
+  border-radius: 0.5rem;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.md-typeset .md-button--primary {
+  box-shadow: 0 6px 16px -8px var(--md-primary-fg-color);
+}
+
+.md-typeset .md-button:hover {
+  transform: translateY(-1px);
+}
+
+/* --------------------------------- 时间线 --------------------------------- */
+
+.md-typeset .timeline > ul {
+  list-style: none;
+  margin: 0.4rem 0 1.6rem;
+  padding-left: 1.4rem;
+  border-left: 2px solid var(--md-default-fg-color--lightest);
+}
+
+.md-typeset .timeline > ul > li {
+  position: relative;
+  margin: 0 0 1.5rem;
+  padding: 0;
+}
+
+.md-typeset .timeline > ul > li::before {
+  content: "";
+  position: absolute;
+  top: 0.35rem;
+  left: -1.82rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--md-primary-fg-color);
+  box-shadow: 0 0 0 3px var(--md-default-bg-color);
+}
+
+.md-typeset .timeline > ul > li > p {
+  margin: 0 0 0.35rem;
+}
+
+.md-typeset .timeline > ul > li > p:last-child {
+  margin-bottom: 0;
+}
+
+.md-typeset .timeline__date {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--md-primary-fg-color);
+  font-variant-numeric: tabular-nums;
+}
+
+.md-typeset .timeline h2 {
+  margin: 2rem 0 1rem;
+  font-size: 1.15rem;
+}
+
+/* 首页「最近动态」每条只有一行，日期后跟正文 */
+.md-typeset .timeline > ul > li > p:first-child .timeline__date {
+  margin-right: 0.35rem;
+}
+
+/* -------------------------------- 关于页 --------------------------------- */
+
+.md-typeset .contact ul {
+  list-style: none;
+  margin: 0.5rem 0 1.5rem;
+  padding: 0;
+  columns: 2;
+  column-gap: 1.5rem;
+}
+
+.md-typeset .contact ul li {
+  margin: 0 0 0.5rem;
+  break-inside: avoid;
+}
+
+.md-typeset .contact ul li .twemoji,
+.md-typeset .contact ul li svg {
+  color: var(--md-primary-fg-color);
+}
+
+/* --------------------------------- 页脚/头部 ------------------------------- */
+
+.md-footer-meta__inner {
+  align-items: center;
+}
+
+.md-social__link svg {
+  transition: transform 150ms ease, opacity 150ms ease;
+}
+
+.md-social__link:hover svg {
+  transform: translateY(-1px);
+  opacity: 1;
+}
+
+/* -------------------------------- 响应式 --------------------------------- */
+
+@media screen and (max-width: 44.9375em) {
+  .md-typeset .hero {
+    padding: 1.5rem 1.25rem;
+    gap: 1.1rem;
+  }
+
+  .md-typeset .hero__logo img {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .md-typeset .hero__title {
+    font-size: 1.8rem;
+  }
+
+  .md-typeset .contact ul {
+    columns: 1;
+  }
+}
+
+/* 打印时去掉装饰 */
+@media print {
+  .md-typeset .hero,
+  .md-typeset .stat {
+    box-shadow: none;
+    background: none;
+  }
 }

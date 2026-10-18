@@ -1,21 +1,116 @@
-# XiangQinxi的博客
-## 个人简介
-一个来自`中国湖南省邵阳市`的`即将上高中的学生`
+---
+hide:
+  - navigation
+  - toc
+---
 
-### 个人经历
-1.`2017`因家里赚了点钱，打算会故乡附件的城市买个房，因此我从`广东省清远市凤鸣小学`去到了`湖南省邵阳市三眼井东塔小学`。
+<div class="hero">
+  <div class="hero__logo">
+    <img src="assets/logo.svg" alt="XiangQinxi 的 Logo">
+  </div>
+  <div class="hero__body">
+    <p class="hero__eyebrow">Hello, world 👋</p>
+    <h1 class="hero__title">XiangQinxi</h1>
+    <p class="hero__desc">
+      喜欢把 <code>tkinter</code> 折腾成现代界面的 Python 开发者。<br>
+      维护 <strong>tkfluent</strong>、<strong>tkdeft</strong>、<strong>suzaku</strong> 等开源项目，
+      也写一点 Streamlit 小工具和中文文档。
+    </p>
+    <p class="hero__actions">
+      <a class="md-button md-button--primary" href="projects/">浏览项目集</a>
+      <a class="md-button" href="https://github.com/XiangQinxi" target="_blank" rel="noopener">GitHub</a>
+      <a class="md-button" href="https://pypi.org/user/XiangQinxi/" target="_blank" rel="noopener">PyPI</a>
+    </p>
+  </div>
+</div>
 
-2.`2022`小升初，去到了`湖南省邵阳市第十五中学（后改名邵阳市第七中学）`，教育资源挺好的，是一、二中的初中部。
+<div class="stats">
+  <div class="stat"><span class="stat__num">6</span><span class="stat__label">PyPI 包</span></div>
+  <div class="stat"><span class="stat__num">30+</span><span class="stat__label">公开仓库</span></div>
+  <div class="stat"><span class="stat__num">2022</span><span class="stat__label">开始开源</span></div>
+  <div class="stat"><span class="stat__num">4</span><span class="stat__label">年持续折腾</span></div>
+</div>
 
-3.`2025`初升高，中考分数`690.5`，可惜，差了点去了`一中`，只好去了`一中`分校`八中`，`八中`在`一中`里面。希望在新学校里，能遇到志同道合学编程的人，小学初中一个也没有，太孤独了。
+## 精选项目
 
-### 编程经历
-1. `2018`上半年，我二年级时，经老师推荐，知道了`麦吉编程(scratch2套皮)`学完里面的课程后，我去各大图形化编程网站学习， 
-那时去了`慧编程`、`编程猫（学习最久）`、`Scratch平台`等平台。
-2. `2021`年，我五年级下学期时，觉得图形化编程只是培养我思维的，不需要再深造了，尝试接触学习代码编程。
-但是因为那时心智不成熟，我连`Python`都看不懂，学不懂
-3. `2022-2023`年，我一直在尝试做项目、库，期间对`tkinter`最感兴趣，做了一些有趣的东西。
-其中最深刻的是，我通过`pywin32`做出了`Windows11`平台上调用`DWM`实现改变标题栏颜色、边框颜色、边框圆角大小等高级效果。
-我为了这些功能查遍几乎全网，但资料实在太少了，最后还是看微软的开发文档和`Flutter`的`win32`调用库才搞出来的。
-我将其文档放到了知乎上，后面才陆续有人做了这一功能的封装。也算是一段有最大成绩的经历了。
-4. `2024`年，我`Python`才算真正入门，我接下来打算去做`tkinter`的扩展库了。
+<div class="grid cards" markdown>
+
+-   :material-palette-outline:{ .lg .middle } **tkfluent**
+
+    ---
+
+    Fluent / WinUI 3 风格的 Tkinter 组件库，换肤、动画、可切换绘制引擎。
+
+    [:octicons-arrow-right-24: 文档](https://tkfluent.netlify.app/){ target="_blank" rel="noopener" }
+    · [:octicons-package-24: PyPI](https://pypi.org/project/tkfluent/){ target="_blank" rel="noopener" }
+
+-   :material-vector-square:{ .lg .middle } **tkdeft**
+
+    ---
+
+    tkfluent 的底座：把矢量绘制变成 Tkinter 控件的绘制引擎层。
+
+    [:octicons-arrow-right-24: 文档](https://tkdeft.netlify.app/){ target="_blank" rel="noopener" }
+    · [:octicons-package-24: PyPI](https://pypi.org/project/tkdeft/){ target="_blank" rel="noopener" }
+
+-   :material-rocket-launch-outline:{ .lg .middle } **suzaku**
+
+    ---
+
+    另一套从零写的 Python GUI 库，外观与性能都想要比 tkinter 更好。
+
+    [:octicons-mark-github-16: GitHub](https://github.com/XiangQinxi/suzaku){ target="_blank" rel="noopener" }
+    · [:octicons-package-24: PyPI](https://pypi.org/project/suzaku/){ target="_blank" rel="noopener" }
+
+-   :material-web:{ .lg .middle } **nicegui-shadcn**
+
+    ---
+
+    给 NiceGUI 用的 shadcn/ui 组件集，自带编译好的 Tailwind 主题。
+
+    [:octicons-arrow-right-24: 文档](https://github.com/XiangQinxi/nicegui-shadcn/tree/master/docs){ target="_blank" rel="noopener" }
+    · [:octicons-package-24: PyPI](https://pypi.org/project/nicegui-shadcn/){ target="_blank" rel="noopener" }
+
+-   :material-history:{ .lg .middle } **tkadw**
+
+    ---
+
+    早期的 Tkinter 扩展组件库（Windows ADW 风格），tkfluent 的前身之一。
+
+    [:octicons-arrow-right-24: 文档](https://tkadwite.netlify.app/){ target="_blank" rel="noopener" }
+    · [:octicons-package-24: PyPI](https://pypi.org/project/tkadw/){ target="_blank" rel="noopener" }
+
+-   :material-video:{ .lg .middle } **streamlit-video-background**
+
+    ---
+
+    一行代码给 Streamlit 页面加上全屏循环视频背景。
+
+    [:octicons-package-24: PyPI](https://pypi.org/project/streamlit-video-background/){ target="_blank" rel="noopener" }
+    · [:octicons-mark-github-16: 源码](https://github.com/XiangQinxi/streamlit-video-background){ target="_blank" rel="noopener" }
+
+</div>
+
+[:octicons-arrow-right-24: 查看全部项目](projects.md){ .md-button }
+
+## 最近动态
+
+<div class="timeline" markdown>
+
+- <span class="timeline__date">2026-10-18</span> 站点用 MkDocs Material 重做，改由 GitHub Actions 自动构建部署
+- <span class="timeline__date">2026-09-24</span> tkfluent `0.5.0`：把主题切换重写成一条统一时间轴
+- <span class="timeline__date">2026-09-16</span> tkdeft `0.3.0` / tkfluent `0.3.0`：补齐对外接口
+- <span class="timeline__date">2026-09-12</span> tkdeft `0.2.0`：可插拔绘制引擎层
+
+</div>
+
+[:octicons-history-16: 完整更新日志](changelog.md) ·
+[:octicons-pencil-16: 博客文章](blog/index.md)
+
+## 关于这个站点
+
+这里记录我在 Python 桌面 GUI、图形绘制和 Web 小工具上折腾出来的东西。
+文档由 [MkDocs](https://www.mkdocs.org/) + [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) 构建，
+推送到 `main` 后由 GitHub Actions 自动发布到 GitHub Pages。
+
+想聊点什么？欢迎从 [关于页](about.md) 找我。

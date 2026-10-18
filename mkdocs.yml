@@ -1,120 +1,170 @@
+# -----------------------------------------------------------------------------
+# 站点信息
+# -----------------------------------------------------------------------------
 site_name: XiangQinxi
+site_description: XiangQinxi 的个人站点 —— Tkinter 现代化界面、Python 开源项目与折腾记录
+site_author: XiangQinxi
+site_url: https://xiangqinxi.github.io/
 
+# 仓库信息（右上角 GitHub 图标与「编辑此页」入口）
+repo_name: XiangQinxi/xiangqinxi.github.io
+repo_url: https://github.com/XiangQinxi/xiangqinxi.github.io
+edit_uri: edit/main/docs/
+
+copyright: Copyright &copy; 2022–2026 XiangQinxi · Built with MkDocs Material
+
+# -----------------------------------------------------------------------------
 # 主题
-plugins:
-  - mkdocstrings:
-      handlers:
-        python:
-          paths: [..]
-          options:
-            allow_inspection: true
-  - meta
-  - search:
-      lang: zh
-  - offline
-
+# -----------------------------------------------------------------------------
 theme:
+  name: material
+  language: zh
+  logo: assets/logo.svg
+  favicon: assets/logo.png
   icon:
+    repo: fontawesome/brands/github
     annotation: material/arrow-right-circle
-  logo: assets/logo.png
-  name: material  # 主题
+
   palette:
+    # 跟随系统
     - media: "(prefers-color-scheme)"
       toggle:
         icon: material/brightness-auto
-        name: Switch to light mode
+        name: 跟随系统
 
+    # 浅色
     - media: "(prefers-color-scheme: light)"
       scheme: default
+      primary: indigo
+      accent: indigo
       toggle:
         icon: material/brightness-7
-        name: Switch to dark mode
+        name: 切换到深色模式
 
+    # 深色
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: indigo
+      accent: indigo
       toggle:
         icon: material/brightness-4
-        name: Switch to system preference
+        name: 切换到浅色模式
 
   features:
-    - navigation.instant
-    - content.code.copy
-    - content.tabs.link
-    - navigation.footer  # Footer
-    - content.tooltips  # ToolTip
-    - blog  # Blog
-    - navigation.tracking
     - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.tracking
     - navigation.indexes
-  language: zh
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.select
+    - content.tabs.link
+    - content.tooltips
+    - toc.follow
 
+# -----------------------------------------------------------------------------
+# Markdown 扩展
+# -----------------------------------------------------------------------------
 markdown_extensions:
-  - pymdownx.tabbed:
-      alternate_style: true
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
   - md_in_html
-  - pymdownx.critic
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
   - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.tilde
-  - tables
-  - abbr
-  - attr_list
   - pymdownx.snippets
-  - def_list
-  - admonition
-  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
+# -----------------------------------------------------------------------------
+# 插件（同一份配置里只能出现一次 plugins 键）
+# -----------------------------------------------------------------------------
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+  - blog:
+      blog_dir: blog
+      post_date_format: long
+      post_url_date_format: yyyy/MM/dd
+      archive: true
+      categories: true
+  - git-revision-date-localized:
+      enable_creation_date: false
+      fallback_to_build_date: true
+      type: date
+      locale: zh
+      # 博客插件生成的列表页不属于源码，跳过以免 --strict 因「无 git 记录」失败
+      exclude:
+        - blog/index.md
+        - blog/archive/**
+        - blog/category/**
+
+# -----------------------------------------------------------------------------
+# 导航
+# -----------------------------------------------------------------------------
 nav:
-  - Home 主页: index.md
-  - Project 项目集: projects.md
+  - 主页: index.md
+  - 项目集: projects.md
+  - 更新日志: changelog.md
+  - 博客: blog/index.md
+  - 关于: about.md
 
+# -----------------------------------------------------------------------------
 # 扩展设置
+# -----------------------------------------------------------------------------
 extra:
-
-  # 网站页脚
+  # 页脚社交链接
   social:
-
-    # github
     - icon: fontawesome/brands/github
       link: https://github.com/XiangQinxi/
-
-    # gitlab
+      name: GitHub
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/user/XiangQinxi/
+      name: PyPI
     - icon: fontawesome/brands/gitlab
       link: https://gitlab.com/XiangQinxi
-
-    # bilibili
+      name: GitLab
     - icon: fontawesome/brands/bilibili
       link: https://space.bilibili.com/471425191
+      name: 哔哩哔哩
+    - icon: fontawesome/solid/envelope
+      link: mailto:xiangqinxi@outlook.com
+      name: 邮件
 
-    # qq
-    - icon: fontawesome/brands/qq
-      link: tencent://message/?uin=1379773753
-
+  # 隐藏 "Made with Material for MkDocs"
+  generator: false
 
 # 扩展主题
 extra_css:
   - stylesheets/extra.css
-
-# 额外插件
-plugins:
-
-  # 搜索插件
-  - search:
-
-      # 搜索语言 - zh en
-      lang:
-        - zh
-        - en
-
-copyright: Copyright &copy; 2022 XiangQinxi

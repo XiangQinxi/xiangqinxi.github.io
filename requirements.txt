@@ -1,0 +1,4 @@
+# 固定版本，避免上游更新导致构建结果漂移（Dependabot 会每周提 PR）
+mkdocs==1.6.1
+mkdocs-material==9.7.7
+mkdocs-git-revision-date-localized-plugin==1.6.0
