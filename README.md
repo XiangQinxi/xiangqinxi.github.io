@@ -26,7 +26,7 @@ XiangQinxi 的个人站点：用来归档开源项目、更新日志和折腾笔
 │   ├── about.md                # 关于
 │   ├── blog/
 │   │   └── posts/              # 博客文章（文件名 yyyy-mm-dd-slug.md）
-│   ├── assets/                 # logo / favicon
+│   ├── assets/                 # 站标 / favicon
 │   └── stylesheets/extra.css   # 自定义样式
 ├── overrides/
 │   └── 404.html                # 自定义 404 页（中文文案）

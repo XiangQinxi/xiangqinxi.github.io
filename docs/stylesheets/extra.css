@@ -69,9 +69,20 @@
 }
 
 .md-typeset .hero__logo img {
-  width: 6rem;
-  height: 6rem;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 26%;
+  object-fit: cover;
   filter: drop-shadow(0 6px 14px rgb(0 0 0 / 18%));
+}
+
+/* 顶栏站标：圆形头像 */
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg,
+.md-nav__button.md-logo img,
+.md-nav__button.md-logo svg {
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .md-typeset .hero__body {

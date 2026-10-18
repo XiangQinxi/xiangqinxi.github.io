@@ -6,7 +6,7 @@ hide:
 
 <div class="hero">
   <div class="hero__logo">
-    <img src="assets/logo.svg" alt="XiangQinxi 的 Logo">
+    <img src="assets/XiangQinxi.png" alt="XiangQinxi 的 Logo">
   </div>
   <div class="hero__body">
     <p class="hero__eyebrow">Hello, world 👋</p>
