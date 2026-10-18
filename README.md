@@ -28,6 +28,8 @@ XiangQinxi 的个人站点：用来归档开源项目、更新日志和折腾笔
 │   │   └── posts/              # 博客文章（文件名 yyyy-mm-dd-slug.md）
 │   ├── assets/                 # logo / favicon
 │   └── stylesheets/extra.css   # 自定义样式
+├── overrides/
+│   └── 404.html                # 自定义 404 页（中文文案）
 ├── mkdocs.yml
 └── requirements.txt            # 固定版本的构建依赖
 ```

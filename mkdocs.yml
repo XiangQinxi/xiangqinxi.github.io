@@ -19,6 +19,7 @@ copyright: Copyright &copy; 2022–2026 XiangQinxi · Built with MkDocs Material
 theme:
   name: material
   language: zh
+  custom_dir: overrides
   logo: assets/logo.svg
   favicon: assets/logo.png
   icon:

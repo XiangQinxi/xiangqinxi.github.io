@@ -1,0 +1,14 @@
+{% extends "main.html" %}
+
+{% block content %}
+  <h1>404 · 这个页面不见了</h1>
+
+  <p>你要找的页面可能已经搬走，或者链接本身写错了。</p>
+
+  <p>
+    <a class="md-button md-button--primary" href="{{ config.site_url }}">回到主页</a>
+    <a class="md-button" href="{{ config.site_url }}projects/">看看项目集</a>
+  </p>
+
+  <p>也可以从 <a href="{{ config.site_url }}changelog/">更新日志</a>、<a href="{{ config.site_url }}blog/">博客</a> 开始翻，或者直接用右上角的搜索。</p>
+{% endblock %}
